@@ -1,0 +1,1628 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: /home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv
+Parsing SystemVerilog input from `/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv' to AST representation.
+Storing AST representation for module `$abstract\async_fifo'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv
+Parsing SystemVerilog input from `/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv' to AST representation.
+Storing AST representation for module `$abstract\fifo_controller'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv
+Parsing SystemVerilog input from `/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv' to AST representation.
+Storing AST representation for module `$abstract\dual_port_bram'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/binary_to_gray.sv
+Parsing SystemVerilog input from `/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/binary_to_gray.sv' to AST representation.
+Storing AST representation for module `$abstract\binary_to_gray'.
+Successfully finished Verilog frontend.
+
+6. Executing Verilog-2005 frontend: /home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/gray_to_binary.sv
+Parsing SystemVerilog input from `/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/gray_to_binary.sv' to AST representation.
+Storing AST representation for module `$abstract\gray_to_binary'.
+Successfully finished Verilog frontend.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+8. Executing AST frontend in derive mode using pre-parsed AST for module `\async_fifo'.
+Generating RTLIL representation for module `\async_fifo'.
+
+8.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+Parameter \ADDR_WIDTH = 8
+
+8.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_controller'.
+Parameter \ADDR_WIDTH = 8
+Generating RTLIL representation for module `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+
+8.3. Executing AST frontend in derive mode using pre-parsed AST for module `\dual_port_bram'.
+Parameter \DATA_WIDTH = 32
+Parameter \ADDR_WIDTH = 8
+Generating RTLIL representation for module `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram'.
+
+8.4. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000
+Used module:     $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram
+Parameter \PTR_WIDTH = 9
+
+8.5. Executing AST frontend in derive mode using pre-parsed AST for module `\gray_to_binary'.
+Parameter \PTR_WIDTH = 9
+Generating RTLIL representation for module `$paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001'.
+Parameter \PTR_WIDTH = 9
+
+8.6. Executing AST frontend in derive mode using pre-parsed AST for module `\binary_to_gray'.
+Parameter \PTR_WIDTH = 9
+Generating RTLIL representation for module `$paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001'.
+Parameter \PTR_WIDTH = 9
+Found cached RTLIL representation for module `$paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001'.
+Parameter \PTR_WIDTH = 9
+Found cached RTLIL representation for module `$paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001'.
+
+8.7. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000
+Used module:         $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:         $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:     $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram
+
+8.8. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000
+Used module:         $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:         $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:     $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram
+Removing unused module `$abstract\gray_to_binary'.
+Removing unused module `$abstract\binary_to_gray'.
+Removing unused module `$abstract\dual_port_bram'.
+Removing unused module `$abstract\fifo_controller'.
+Removing unused module `$abstract\async_fifo'.
+Removed 5 unused modules.
+Renaming module async_fifo to async_fifo.
+
+9. Generating Graphviz representation of design.
+Writing dot description to `/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/hierarchy.dot'.
+Dumping module async_fifo to page 1.
+
+10. Executing TRIBUF pass.
+
+11. Executing HIERARCHY pass (managing design hierarchy).
+
+11.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000
+Used module:         $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:         $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:     $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram
+
+11.2. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000
+Used module:         $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:         $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001
+Used module:     $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram
+Removed 0 unused modules.
+
+12. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+13. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7 in module async_fifo.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5 in module async_fifo.
+Marked 2 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36 in module $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29 in module $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:105$26 in module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:84$23 in module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:70$17 in module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+Marked 1 switch rules as full_case in process $proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:45$13 in module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+Removed a total of 0 dead cases.
+
+14. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 3 assignments to connections.
+
+15. Executing PROC_INIT pass (extract init attributes).
+
+16. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rrst_n in `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7'.
+Found async reset \wrst_n in `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5'.
+Found async reset \rrst_n in `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36'.
+Found async reset \rrst_n in `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:105$26'.
+Found async reset \rrst_n in `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:84$23'.
+Found async reset \wrst_n in `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:70$17'.
+Found async reset \wrst_n in `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:45$13'.
+
+17. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+18. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7'.
+     1/2: $0\w_ptr_sync_gray[8:0]
+     2/2: $0\w_ptr_gray_meta[8:0]
+Creating decoders for process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5'.
+     1/2: $0\r_ptr_sync_gray[8:0]
+     2/2: $0\r_ptr_gray_meta[8:0]
+Creating decoders for process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36'.
+     1/1: $0\r_q_iso[31:0]
+Creating decoders for process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+     1/3: $1$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$35
+     2/3: $1$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_DATA[31:0]$34
+     3/3: $1$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_ADDR[7:0]$33
+Creating decoders for process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:105$26'.
+     1/1: $0\r_empty[0:0]
+Creating decoders for process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:84$23'.
+     1/1: $0\r_bin_counter[8:0]
+Creating decoders for process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:70$17'.
+     1/1: $0\w_full[0:0]
+Creating decoders for process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:45$13'.
+     1/1: $0\w_bin_counter[8:0]
+
+19. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+20. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\async_fifo.\w_ptr_sync_gray' using process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7'.
+  created $adff cell `$procdff$67' with positive edge clock and positive level reset.
+Creating register for signal `\async_fifo.\w_ptr_gray_meta' using process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7'.
+  created $adff cell `$procdff$72' with positive edge clock and positive level reset.
+Creating register for signal `\async_fifo.\r_ptr_sync_gray' using process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5'.
+  created $adff cell `$procdff$77' with positive edge clock and positive level reset.
+Creating register for signal `\async_fifo.\r_ptr_gray_meta' using process `\async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5'.
+  created $adff cell `$procdff$82' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.\r_q_iso' using process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36'.
+  created $adff cell `$procdff$87' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_ADDR' using process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+  created $dff cell `$procdff$88' with positive edge clock.
+Creating register for signal `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_DATA' using process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+  created $dff cell `$procdff$89' with positive edge clock.
+Creating register for signal `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN' using process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+  created $dff cell `$procdff$90' with positive edge clock.
+Creating register for signal `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.\r_empty' using process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:105$26'.
+  created $adff cell `$procdff$95' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.\r_bin_counter' using process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:84$23'.
+  created $adff cell `$procdff$100' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.\w_full' using process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:70$17'.
+  created $adff cell `$procdff$105' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.\w_bin_counter' using process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:45$13'.
+  created $adff cell `$procdff$110' with positive edge clock and positive level reset.
+
+21. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+22. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:88$7'.
+Removing empty process `async_fifo.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/async_fifo.sv:77$5'.
+Found and cleaned up 2 empty switches in `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36'.
+Removing empty process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:66$36'.
+Found and cleaned up 1 empty switch in `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+Removing empty process `$paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:44$29'.
+Removing empty process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:105$26'.
+Removing empty process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:84$23'.
+Removing empty process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:70$17'.
+Removing empty process `$paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.$proc$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:45$13'.
+Cleaned up 3 empty switches.
+
+23. Executing CHECK pass (checking for obvious problems).
+Checking module async_fifo...
+Checking module $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001...
+Checking module $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram...
+Checking module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000...
+Checking module $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001...
+Found and reported 0 problems.
+
+24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001.
+Optimizing module $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.
+<suppressed ~2 debug messages>
+Optimizing module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+<suppressed ~8 debug messages>
+Optimizing module $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001.
+<suppressed ~1 debug messages>
+
+25. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\gray_to_binary\PTR_WIDTH=s32'00000000000000000000000000001001.
+Deleting now unused module $paramod$ce0c38940747abe9a6fc0e1739aaf602f7b0afe8\dual_port_bram.
+Deleting now unused module $paramod\fifo_controller\ADDR_WIDTH=s32'00000000000000000000000000001000.
+Deleting now unused module $paramod\binary_to_gray\PTR_WIDTH=s32'00000000000000000000000000001001.
+<suppressed ~6 debug messages>
+
+26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 19 unused cells and 76 unused wires.
+<suppressed ~22 debug messages>
+
+28. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+30. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+31. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+    Consolidated identical input bits for $mux cell $flatten\u_bram.$procmux$55:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32
+      New ports: A=1'0, B=1'1, Y=$flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0]
+      New connections: $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [31:1] = { $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] $flatten\u_bram.$0$memwr$\bram$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/dual_port_bram.sv:46$28_EN[31:0]$32 [0] }
+  Optimizing cells in module \async_fifo.
+Performed a total of 1 changes.
+
+32. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+33. Executing OPT_DFF pass (perform DFF optimizations).
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+35. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+36. Rerunning OPT passes. (Maybe there is more to do…)
+
+37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+40. Executing OPT_DFF pass (perform DFF optimizations).
+
+41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+42. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+43. Executing FSM pass (extract and optimize FSM).
+
+43.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+43.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+43.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+43.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+43.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+43.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+43.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+43.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+44. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+45. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+46. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+47. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+48. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+49. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\u_bram.$procdff$87 ($adff) from module async_fifo (D = $flatten\u_bram.$procmux$50_Y, Q = \u_bram.r_q_iso).
+
+50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+52. Rerunning OPT passes. (Maybe there is more to do…)
+
+53. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+54. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+55. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+56. Executing OPT_DFF pass (perform DFF optimizations).
+
+57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+58. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+59. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 9) from port B of cell async_fifo.$flatten\u_fifo_ctrl.\u_r_b2g.$xor$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/binary_to_gray.sv:15$48 ($xor).
+Removed top 8 bits (of 9) from port A of cell async_fifo.$flatten\u_fifo_ctrl.$not$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:82$20 ($not).
+Removed top 1 bits (of 9) from port B of cell async_fifo.$flatten\u_fifo_ctrl.\u_w_b2g.$xor$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/binary_to_gray.sv:15$48 ($xor).
+Removed top 8 bits (of 9) from port A of cell async_fifo.$flatten\u_fifo_ctrl.$not$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:43$10 ($not).
+
+60. Executing PEEPOPT pass (run peephole optimizers).
+
+61. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+62. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module async_fifo:
+  creating $macc model for $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:43$12 ($add).
+  creating $macc model for $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:82$22 ($add).
+  creating $alu model for $macc $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:82$22.
+  creating $alu model for $macc $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:43$12.
+  creating $alu cell for $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:43$12: $auto$alumacc.cc:485:replace_alu$119
+  creating $alu cell for $flatten\u_fifo_ctrl.$add$/home/jaikrishn/Documents/hardware/true_port_BRAM/rtl/fifo_controller.sv:82$22: $auto$alumacc.cc:485:replace_alu$122
+  created 2 $alu and 0 $macc cells.
+
+63. Executing SHARE pass (SAT-based resource sharing).
+
+64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+65. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+69. Executing OPT_DFF pass (perform DFF optimizations).
+
+70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+72. Executing MEMORY pass.
+
+72.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+72.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+72.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing async_fifo.u_bram.bram write port 0.
+
+72.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+72.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\u_bram.bram'[0] in module `\async_fifo': FF found, but with a mux select that doesn't seem to correspond to transparency logic.
+Checking read port address `\u_bram.bram'[0] in module `\async_fifo': address FF has async set and/or reset, not supported.
+
+72.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+72.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+72.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+72.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+72.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+74. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~41 debug messages>
+
+75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~12 debug messages>
+Removed a total of 4 cells.
+
+76. Executing OPT_DFF pass (perform DFF optimizations).
+
+77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+78. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \u_bram.bram in module \async_fifo:
+  created 256 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 255 $mux cells.
+  write interface: 256 write mux blocks.
+
+79. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~16 debug messages>
+
+80. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+81. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~257 debug messages>
+
+82. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+83. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+84. Executing OPT_SHARE pass.
+
+85. Executing OPT_DFF pass (perform DFF optimizations).
+
+86. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 520 unused wires.
+<suppressed ~1 debug messages>
+
+87. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+88. Rerunning OPT passes. (Maybe there is more to do…)
+
+89. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~257 debug messages>
+
+90. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+91. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+92. Executing OPT_SHARE pass.
+
+93. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\u_bram.bram[9]$167 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[9]).
+Adding EN signal on $memory\u_bram.bram[99]$347 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[99]).
+Adding EN signal on $memory\u_bram.bram[98]$345 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[98]).
+Adding EN signal on $memory\u_bram.bram[97]$343 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[97]).
+Adding EN signal on $memory\u_bram.bram[96]$341 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[96]).
+Adding EN signal on $memory\u_bram.bram[95]$339 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[95]).
+Adding EN signal on $memory\u_bram.bram[94]$337 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[94]).
+Adding EN signal on $memory\u_bram.bram[93]$335 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[93]).
+Adding EN signal on $memory\u_bram.bram[92]$333 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[92]).
+Adding EN signal on $memory\u_bram.bram[91]$331 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[91]).
+Adding EN signal on $memory\u_bram.bram[90]$329 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[90]).
+Adding EN signal on $memory\u_bram.bram[8]$165 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[8]).
+Adding EN signal on $memory\u_bram.bram[89]$327 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[89]).
+Adding EN signal on $memory\u_bram.bram[88]$325 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[88]).
+Adding EN signal on $memory\u_bram.bram[87]$323 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[87]).
+Adding EN signal on $memory\u_bram.bram[86]$321 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[86]).
+Adding EN signal on $memory\u_bram.bram[85]$319 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[85]).
+Adding EN signal on $memory\u_bram.bram[84]$317 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[84]).
+Adding EN signal on $memory\u_bram.bram[83]$315 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[83]).
+Adding EN signal on $memory\u_bram.bram[82]$313 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[82]).
+Adding EN signal on $memory\u_bram.bram[81]$311 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[81]).
+Adding EN signal on $memory\u_bram.bram[80]$309 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[80]).
+Adding EN signal on $memory\u_bram.bram[7]$163 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[7]).
+Adding EN signal on $memory\u_bram.bram[79]$307 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[79]).
+Adding EN signal on $memory\u_bram.bram[78]$305 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[78]).
+Adding EN signal on $memory\u_bram.bram[77]$303 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[77]).
+Adding EN signal on $memory\u_bram.bram[76]$301 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[76]).
+Adding EN signal on $memory\u_bram.bram[75]$299 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[75]).
+Adding EN signal on $memory\u_bram.bram[74]$297 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[74]).
+Adding EN signal on $memory\u_bram.bram[73]$295 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[73]).
+Adding EN signal on $memory\u_bram.bram[72]$293 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[72]).
+Adding EN signal on $memory\u_bram.bram[71]$291 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[71]).
+Adding EN signal on $memory\u_bram.bram[70]$289 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[70]).
+Adding EN signal on $memory\u_bram.bram[6]$161 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[6]).
+Adding EN signal on $memory\u_bram.bram[69]$287 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[69]).
+Adding EN signal on $memory\u_bram.bram[68]$285 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[68]).
+Adding EN signal on $memory\u_bram.bram[67]$283 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[67]).
+Adding EN signal on $memory\u_bram.bram[66]$281 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[66]).
+Adding EN signal on $memory\u_bram.bram[65]$279 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[65]).
+Adding EN signal on $memory\u_bram.bram[64]$277 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[64]).
+Adding EN signal on $memory\u_bram.bram[63]$275 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[63]).
+Adding EN signal on $memory\u_bram.bram[62]$273 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[62]).
+Adding EN signal on $memory\u_bram.bram[61]$271 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[61]).
+Adding EN signal on $memory\u_bram.bram[60]$269 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[60]).
+Adding EN signal on $memory\u_bram.bram[5]$159 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[5]).
+Adding EN signal on $memory\u_bram.bram[59]$267 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[59]).
+Adding EN signal on $memory\u_bram.bram[58]$265 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[58]).
+Adding EN signal on $memory\u_bram.bram[57]$263 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[57]).
+Adding EN signal on $memory\u_bram.bram[56]$261 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[56]).
+Adding EN signal on $memory\u_bram.bram[55]$259 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[55]).
+Adding EN signal on $memory\u_bram.bram[54]$257 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[54]).
+Adding EN signal on $memory\u_bram.bram[53]$255 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[53]).
+Adding EN signal on $memory\u_bram.bram[52]$253 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[52]).
+Adding EN signal on $memory\u_bram.bram[51]$251 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[51]).
+Adding EN signal on $memory\u_bram.bram[50]$249 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[50]).
+Adding EN signal on $memory\u_bram.bram[4]$157 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[4]).
+Adding EN signal on $memory\u_bram.bram[49]$247 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[49]).
+Adding EN signal on $memory\u_bram.bram[48]$245 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[48]).
+Adding EN signal on $memory\u_bram.bram[47]$243 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[47]).
+Adding EN signal on $memory\u_bram.bram[46]$241 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[46]).
+Adding EN signal on $memory\u_bram.bram[45]$239 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[45]).
+Adding EN signal on $memory\u_bram.bram[44]$237 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[44]).
+Adding EN signal on $memory\u_bram.bram[43]$235 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[43]).
+Adding EN signal on $memory\u_bram.bram[42]$233 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[42]).
+Adding EN signal on $memory\u_bram.bram[41]$231 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[41]).
+Adding EN signal on $memory\u_bram.bram[40]$229 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[40]).
+Adding EN signal on $memory\u_bram.bram[3]$155 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[3]).
+Adding EN signal on $memory\u_bram.bram[39]$227 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[39]).
+Adding EN signal on $memory\u_bram.bram[38]$225 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[38]).
+Adding EN signal on $memory\u_bram.bram[37]$223 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[37]).
+Adding EN signal on $memory\u_bram.bram[36]$221 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[36]).
+Adding EN signal on $memory\u_bram.bram[35]$219 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[35]).
+Adding EN signal on $memory\u_bram.bram[34]$217 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[34]).
+Adding EN signal on $memory\u_bram.bram[33]$215 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[33]).
+Adding EN signal on $memory\u_bram.bram[32]$213 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[32]).
+Adding EN signal on $memory\u_bram.bram[31]$211 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[31]).
+Adding EN signal on $memory\u_bram.bram[30]$209 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[30]).
+Adding EN signal on $memory\u_bram.bram[2]$153 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[2]).
+Adding EN signal on $memory\u_bram.bram[29]$207 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[29]).
+Adding EN signal on $memory\u_bram.bram[28]$205 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[28]).
+Adding EN signal on $memory\u_bram.bram[27]$203 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[27]).
+Adding EN signal on $memory\u_bram.bram[26]$201 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[26]).
+Adding EN signal on $memory\u_bram.bram[25]$199 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[25]).
+Adding EN signal on $memory\u_bram.bram[255]$659 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[255]).
+Adding EN signal on $memory\u_bram.bram[254]$657 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[254]).
+Adding EN signal on $memory\u_bram.bram[253]$655 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[253]).
+Adding EN signal on $memory\u_bram.bram[252]$653 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[252]).
+Adding EN signal on $memory\u_bram.bram[251]$651 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[251]).
+Adding EN signal on $memory\u_bram.bram[250]$649 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[250]).
+Adding EN signal on $memory\u_bram.bram[24]$197 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[24]).
+Adding EN signal on $memory\u_bram.bram[249]$647 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[249]).
+Adding EN signal on $memory\u_bram.bram[248]$645 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[248]).
+Adding EN signal on $memory\u_bram.bram[247]$643 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[247]).
+Adding EN signal on $memory\u_bram.bram[246]$641 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[246]).
+Adding EN signal on $memory\u_bram.bram[245]$639 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[245]).
+Adding EN signal on $memory\u_bram.bram[244]$637 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[244]).
+Adding EN signal on $memory\u_bram.bram[243]$635 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[243]).
+Adding EN signal on $memory\u_bram.bram[242]$633 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[242]).
+Adding EN signal on $memory\u_bram.bram[241]$631 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[241]).
+Adding EN signal on $memory\u_bram.bram[240]$629 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[240]).
+Adding EN signal on $memory\u_bram.bram[23]$195 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[23]).
+Adding EN signal on $memory\u_bram.bram[239]$627 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[239]).
+Adding EN signal on $memory\u_bram.bram[238]$625 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[238]).
+Adding EN signal on $memory\u_bram.bram[237]$623 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[237]).
+Adding EN signal on $memory\u_bram.bram[236]$621 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[236]).
+Adding EN signal on $memory\u_bram.bram[235]$619 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[235]).
+Adding EN signal on $memory\u_bram.bram[234]$617 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[234]).
+Adding EN signal on $memory\u_bram.bram[233]$615 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[233]).
+Adding EN signal on $memory\u_bram.bram[232]$613 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[232]).
+Adding EN signal on $memory\u_bram.bram[231]$611 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[231]).
+Adding EN signal on $memory\u_bram.bram[230]$609 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[230]).
+Adding EN signal on $memory\u_bram.bram[22]$193 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[22]).
+Adding EN signal on $memory\u_bram.bram[229]$607 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[229]).
+Adding EN signal on $memory\u_bram.bram[228]$605 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[228]).
+Adding EN signal on $memory\u_bram.bram[227]$603 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[227]).
+Adding EN signal on $memory\u_bram.bram[226]$601 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[226]).
+Adding EN signal on $memory\u_bram.bram[225]$599 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[225]).
+Adding EN signal on $memory\u_bram.bram[224]$597 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[224]).
+Adding EN signal on $memory\u_bram.bram[223]$595 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[223]).
+Adding EN signal on $memory\u_bram.bram[222]$593 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[222]).
+Adding EN signal on $memory\u_bram.bram[221]$591 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[221]).
+Adding EN signal on $memory\u_bram.bram[220]$589 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[220]).
+Adding EN signal on $memory\u_bram.bram[21]$191 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[21]).
+Adding EN signal on $memory\u_bram.bram[219]$587 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[219]).
+Adding EN signal on $memory\u_bram.bram[218]$585 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[218]).
+Adding EN signal on $memory\u_bram.bram[217]$583 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[217]).
+Adding EN signal on $memory\u_bram.bram[216]$581 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[216]).
+Adding EN signal on $memory\u_bram.bram[215]$579 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[215]).
+Adding EN signal on $memory\u_bram.bram[214]$577 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[214]).
+Adding EN signal on $memory\u_bram.bram[213]$575 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[213]).
+Adding EN signal on $memory\u_bram.bram[212]$573 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[212]).
+Adding EN signal on $memory\u_bram.bram[211]$571 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[211]).
+Adding EN signal on $memory\u_bram.bram[210]$569 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[210]).
+Adding EN signal on $memory\u_bram.bram[20]$189 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[20]).
+Adding EN signal on $memory\u_bram.bram[209]$567 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[209]).
+Adding EN signal on $memory\u_bram.bram[208]$565 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[208]).
+Adding EN signal on $memory\u_bram.bram[207]$563 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[207]).
+Adding EN signal on $memory\u_bram.bram[206]$561 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[206]).
+Adding EN signal on $memory\u_bram.bram[205]$559 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[205]).
+Adding EN signal on $memory\u_bram.bram[204]$557 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[204]).
+Adding EN signal on $memory\u_bram.bram[203]$555 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[203]).
+Adding EN signal on $memory\u_bram.bram[202]$553 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[202]).
+Adding EN signal on $memory\u_bram.bram[201]$551 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[201]).
+Adding EN signal on $memory\u_bram.bram[200]$549 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[200]).
+Adding EN signal on $memory\u_bram.bram[1]$151 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[1]).
+Adding EN signal on $memory\u_bram.bram[19]$187 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[19]).
+Adding EN signal on $memory\u_bram.bram[199]$547 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[199]).
+Adding EN signal on $memory\u_bram.bram[198]$545 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[198]).
+Adding EN signal on $memory\u_bram.bram[197]$543 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[197]).
+Adding EN signal on $memory\u_bram.bram[196]$541 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[196]).
+Adding EN signal on $memory\u_bram.bram[195]$539 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[195]).
+Adding EN signal on $memory\u_bram.bram[194]$537 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[194]).
+Adding EN signal on $memory\u_bram.bram[193]$535 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[193]).
+Adding EN signal on $memory\u_bram.bram[192]$533 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[192]).
+Adding EN signal on $memory\u_bram.bram[191]$531 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[191]).
+Adding EN signal on $memory\u_bram.bram[190]$529 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[190]).
+Adding EN signal on $memory\u_bram.bram[18]$185 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[18]).
+Adding EN signal on $memory\u_bram.bram[189]$527 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[189]).
+Adding EN signal on $memory\u_bram.bram[188]$525 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[188]).
+Adding EN signal on $memory\u_bram.bram[187]$523 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[187]).
+Adding EN signal on $memory\u_bram.bram[186]$521 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[186]).
+Adding EN signal on $memory\u_bram.bram[185]$519 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[185]).
+Adding EN signal on $memory\u_bram.bram[184]$517 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[184]).
+Adding EN signal on $memory\u_bram.bram[183]$515 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[183]).
+Adding EN signal on $memory\u_bram.bram[182]$513 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[182]).
+Adding EN signal on $memory\u_bram.bram[181]$511 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[181]).
+Adding EN signal on $memory\u_bram.bram[180]$509 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[180]).
+Adding EN signal on $memory\u_bram.bram[17]$183 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[17]).
+Adding EN signal on $memory\u_bram.bram[179]$507 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[179]).
+Adding EN signal on $memory\u_bram.bram[178]$505 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[178]).
+Adding EN signal on $memory\u_bram.bram[177]$503 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[177]).
+Adding EN signal on $memory\u_bram.bram[176]$501 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[176]).
+Adding EN signal on $memory\u_bram.bram[175]$499 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[175]).
+Adding EN signal on $memory\u_bram.bram[174]$497 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[174]).
+Adding EN signal on $memory\u_bram.bram[173]$495 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[173]).
+Adding EN signal on $memory\u_bram.bram[172]$493 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[172]).
+Adding EN signal on $memory\u_bram.bram[171]$491 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[171]).
+Adding EN signal on $memory\u_bram.bram[170]$489 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[170]).
+Adding EN signal on $memory\u_bram.bram[16]$181 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[16]).
+Adding EN signal on $memory\u_bram.bram[169]$487 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[169]).
+Adding EN signal on $memory\u_bram.bram[168]$485 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[168]).
+Adding EN signal on $memory\u_bram.bram[167]$483 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[167]).
+Adding EN signal on $memory\u_bram.bram[166]$481 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[166]).
+Adding EN signal on $memory\u_bram.bram[165]$479 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[165]).
+Adding EN signal on $memory\u_bram.bram[164]$477 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[164]).
+Adding EN signal on $memory\u_bram.bram[163]$475 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[163]).
+Adding EN signal on $memory\u_bram.bram[162]$473 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[162]).
+Adding EN signal on $memory\u_bram.bram[161]$471 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[161]).
+Adding EN signal on $memory\u_bram.bram[160]$469 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[160]).
+Adding EN signal on $memory\u_bram.bram[15]$179 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[15]).
+Adding EN signal on $memory\u_bram.bram[159]$467 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[159]).
+Adding EN signal on $memory\u_bram.bram[158]$465 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[158]).
+Adding EN signal on $memory\u_bram.bram[157]$463 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[157]).
+Adding EN signal on $memory\u_bram.bram[156]$461 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[156]).
+Adding EN signal on $memory\u_bram.bram[155]$459 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[155]).
+Adding EN signal on $memory\u_bram.bram[154]$457 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[154]).
+Adding EN signal on $memory\u_bram.bram[153]$455 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[153]).
+Adding EN signal on $memory\u_bram.bram[152]$453 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[152]).
+Adding EN signal on $memory\u_bram.bram[151]$451 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[151]).
+Adding EN signal on $memory\u_bram.bram[150]$449 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[150]).
+Adding EN signal on $memory\u_bram.bram[14]$177 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[14]).
+Adding EN signal on $memory\u_bram.bram[149]$447 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[149]).
+Adding EN signal on $memory\u_bram.bram[148]$445 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[148]).
+Adding EN signal on $memory\u_bram.bram[147]$443 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[147]).
+Adding EN signal on $memory\u_bram.bram[146]$441 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[146]).
+Adding EN signal on $memory\u_bram.bram[145]$439 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[145]).
+Adding EN signal on $memory\u_bram.bram[144]$437 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[144]).
+Adding EN signal on $memory\u_bram.bram[143]$435 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[143]).
+Adding EN signal on $memory\u_bram.bram[142]$433 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[142]).
+Adding EN signal on $memory\u_bram.bram[141]$431 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[141]).
+Adding EN signal on $memory\u_bram.bram[140]$429 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[140]).
+Adding EN signal on $memory\u_bram.bram[13]$175 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[13]).
+Adding EN signal on $memory\u_bram.bram[139]$427 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[139]).
+Adding EN signal on $memory\u_bram.bram[138]$425 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[138]).
+Adding EN signal on $memory\u_bram.bram[137]$423 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[137]).
+Adding EN signal on $memory\u_bram.bram[136]$421 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[136]).
+Adding EN signal on $memory\u_bram.bram[135]$419 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[135]).
+Adding EN signal on $memory\u_bram.bram[134]$417 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[134]).
+Adding EN signal on $memory\u_bram.bram[133]$415 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[133]).
+Adding EN signal on $memory\u_bram.bram[132]$413 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[132]).
+Adding EN signal on $memory\u_bram.bram[131]$411 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[131]).
+Adding EN signal on $memory\u_bram.bram[130]$409 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[130]).
+Adding EN signal on $memory\u_bram.bram[12]$173 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[12]).
+Adding EN signal on $memory\u_bram.bram[129]$407 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[129]).
+Adding EN signal on $memory\u_bram.bram[128]$405 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[128]).
+Adding EN signal on $memory\u_bram.bram[127]$403 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[127]).
+Adding EN signal on $memory\u_bram.bram[126]$401 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[126]).
+Adding EN signal on $memory\u_bram.bram[125]$399 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[125]).
+Adding EN signal on $memory\u_bram.bram[124]$397 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[124]).
+Adding EN signal on $memory\u_bram.bram[123]$395 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[123]).
+Adding EN signal on $memory\u_bram.bram[122]$393 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[122]).
+Adding EN signal on $memory\u_bram.bram[121]$391 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[121]).
+Adding EN signal on $memory\u_bram.bram[120]$389 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[120]).
+Adding EN signal on $memory\u_bram.bram[11]$171 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[11]).
+Adding EN signal on $memory\u_bram.bram[119]$387 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[119]).
+Adding EN signal on $memory\u_bram.bram[118]$385 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[118]).
+Adding EN signal on $memory\u_bram.bram[117]$383 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[117]).
+Adding EN signal on $memory\u_bram.bram[116]$381 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[116]).
+Adding EN signal on $memory\u_bram.bram[115]$379 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[115]).
+Adding EN signal on $memory\u_bram.bram[114]$377 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[114]).
+Adding EN signal on $memory\u_bram.bram[113]$375 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[113]).
+Adding EN signal on $memory\u_bram.bram[112]$373 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[112]).
+Adding EN signal on $memory\u_bram.bram[111]$371 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[111]).
+Adding EN signal on $memory\u_bram.bram[110]$369 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[110]).
+Adding EN signal on $memory\u_bram.bram[10]$169 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[10]).
+Adding EN signal on $memory\u_bram.bram[109]$367 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[109]).
+Adding EN signal on $memory\u_bram.bram[108]$365 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[108]).
+Adding EN signal on $memory\u_bram.bram[107]$363 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[107]).
+Adding EN signal on $memory\u_bram.bram[106]$361 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[106]).
+Adding EN signal on $memory\u_bram.bram[105]$359 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[105]).
+Adding EN signal on $memory\u_bram.bram[104]$357 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[104]).
+Adding EN signal on $memory\u_bram.bram[103]$355 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[103]).
+Adding EN signal on $memory\u_bram.bram[102]$353 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[102]).
+Adding EN signal on $memory\u_bram.bram[101]$351 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[101]).
+Adding EN signal on $memory\u_bram.bram[100]$349 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[100]).
+Adding EN signal on $memory\u_bram.bram[0]$149 ($dff) from module async_fifo (D = \w_data, Q = \u_bram.bram[0]).
+
+94. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 256 unused cells and 256 unused wires.
+<suppressed ~257 debug messages>
+
+95. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+96. Rerunning OPT passes. (Maybe there is more to do…)
+
+97. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+98. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+99. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+100. Executing OPT_SHARE pass.
+
+101. Executing OPT_DFF pass (perform DFF optimizations).
+
+102. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+104. Executing TECHMAP pass (map to technology primitives).
+
+104.1. Executing Verilog-2005 frontend: /nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/9r0bh7sp051dpm8km8bqlb028anpd3v3-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+104.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$d2fa05d38998afabc6d4f34471305d0af4b8b2df\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1398 debug messages>
+
+105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~90 debug messages>
+
+106. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+107. Executing OPT_DFF pass (perform DFF optimizations).
+
+108. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 12 unused cells and 92 unused wires.
+<suppressed ~13 debug messages>
+
+109. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+110. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+111. Executing OPT_DFF pass (perform DFF optimizations).
+
+112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+113. Executing ABC pass (technology mapping using ABC).
+
+113.1. Extracting gate netlist of module `\async_fifo' to `<abc-temp-dir>/input.blif'..
+Extracted 8871 gates and 17105 wires to a netlist network with 8233 inputs and 325 outputs.
+
+113.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+113.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:              XNOR cells:        8
+ABC RESULTS:               MUX cells:     8160
+ABC RESULTS:              NAND cells:        7
+ABC RESULTS:             ORNOT cells:       13
+ABC RESULTS:                OR cells:      303
+ABC RESULTS:            ANDNOT cells:      306
+ABC RESULTS:               NOT cells:       27
+ABC RESULTS:               XOR cells:       60
+ABC RESULTS:        internal signals:     8547
+ABC RESULTS:           input signals:     8233
+ABC RESULTS:          output signals:      325
+Removing temp directory.
+
+114. Executing OPT pass (performing simple optimizations).
+
+114.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~4096 debug messages>
+
+114.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+114.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+114.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 2 unused cells and 9116 unused wires.
+<suppressed ~5 debug messages>
+
+114.5. Finished fast OPT passes.
+
+115. Executing HIERARCHY pass (managing design hierarchy).
+
+115.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+
+115.2. Analyzing design hierarchy..
+Top module:  \async_fifo
+Removed 0 unused modules.
+
+116. Executing CHECK pass (checking for obvious problems).
+Checking module async_fifo...
+Found and reported 0 problems.
+
+117. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:               9160
+   Number of wire bits:          17454
+   Number of public wires:         313
+   Number of public wire bits:    8607
+   Number of ports:                 11
+   Number of port bits:             73
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              17169
+     $_ANDNOT_                     306
+     $_DFFE_PN0N_                   32
+     $_DFFE_PP_                   8192
+     $_DFF_PN0_                     55
+     $_DFF_PN1_                      1
+     $_MUX_                       8160
+     $_NAND_                         7
+     $_NOR_                          1
+     $_NOT_                         25
+     $_ORNOT_                       13
+     $_OR_                         303
+     $_XNOR_                         8
+     $_XOR_                         60
+     $scopeinfo                      6
+
+118. Generating Graphviz representation of design.
+Writing dot description to `/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/primitive_techmap.dot'.
+Dumping module async_fifo to page 1.
+
+119. Executing OPT pass (performing simple optimizations).
+
+119.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+119.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+119.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+119.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+119.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+119.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+119.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+119.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+119.9. Finished OPT passes. (There is nothing left to do.)
+
+120. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 6 unused cells and 31 unused wires.
+<suppressed ~37 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/tmp/c52d9f0e2da44e5e99dd5d720d8c26d8.lib ",
+   "modules": {
+      "\\async_fifo": {
+         "num_wires":         9129,
+         "num_wire_bits":     17229,
+         "num_pub_wires":     282,
+         "num_pub_wire_bits": 8382,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         17163,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 306,
+            "$_DFFE_PN0N_": 32,
+            "$_DFFE_PP_": 8192,
+            "$_DFF_PN0_": 55,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 8160,
+            "$_NAND_": 7,
+            "$_NOR_": 1,
+            "$_NOT_": 25,
+            "$_ORNOT_": 13,
+            "$_OR_": 303,
+            "$_XNOR_": 8,
+            "$_XOR_": 60
+         }
+      }
+   },
+      "design": {
+         "num_wires":         9129,
+         "num_wire_bits":     17229,
+         "num_pub_wires":     282,
+         "num_pub_wire_bits": 8382,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         17163,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 306,
+            "$_DFFE_PN0N_": 32,
+            "$_DFFE_PP_": 8192,
+            "$_DFF_PN0_": 55,
+            "$_DFF_PN1_": 1,
+            "$_MUX_": 8160,
+            "$_NAND_": 7,
+            "$_NOR_": 1,
+            "$_NOT_": 25,
+            "$_ORNOT_": 13,
+            "$_OR_": 303,
+            "$_XNOR_": 8,
+            "$_XOR_": 60
+         }
+      }
+}
+
+121. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:               9129
+   Number of wire bits:          17229
+   Number of public wires:         282
+   Number of public wire bits:    8382
+   Number of ports:                 11
+   Number of port bits:             73
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              17163
+     $_ANDNOT_                     306
+     $_DFFE_PN0N_                   32
+     $_DFFE_PP_                   8192
+     $_DFF_PN0_                     55
+     $_DFF_PN1_                      1
+     $_MUX_                       8160
+     $_NAND_                         7
+     $_NOR_                          1
+     $_NOT_                         25
+     $_ORNOT_                       13
+     $_OR_                         303
+     $_XNOR_                         8
+     $_XOR_                         60
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_DFFE_PP_ is unknown!
+   Area for cell type $_DFF_PN0_ is unknown!
+   Area for cell type $_DFF_PN1_ is unknown!
+   Area for cell type $_DFFE_PN0N_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+122. Executing TECHMAP pass (map to technology primitives).
+
+122.1. Executing Verilog-2005 frontend: /home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+122.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+123. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+124. Executing TECHMAP pass (map to technology primitives).
+
+124.1. Executing Verilog-2005 frontend: /home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+124.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+125. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+126. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+126.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\async_fifo':
+  mapped 87 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 1 $_DFF_PN1_ cells to \sky130_fd_sc_hd__dfstp_2 cells.
+  mapped 8192 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/tmp/c52d9f0e2da44e5e99dd5d720d8c26d8.lib ",
+   "modules": {
+      "\\async_fifo": {
+         "num_wires":         17353,
+         "num_wire_bits":     25453,
+         "num_pub_wires":     282,
+         "num_pub_wire_bits": 8382,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         25387,
+         "area":              176559.334400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 306,
+            "$_MUX_": 16384,
+            "$_NAND_": 7,
+            "$_NOR_": 1,
+            "$_NOT_": 25,
+            "$_ORNOT_": 13,
+            "$_OR_": 303,
+            "$_XNOR_": 8,
+            "$_XOR_": 60,
+            "sky130_fd_sc_hd__dfrtp_2": 87,
+            "sky130_fd_sc_hd__dfstp_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 8192
+         }
+      }
+   },
+      "design": {
+         "num_wires":         17353,
+         "num_wire_bits":     25453,
+         "num_pub_wires":     282,
+         "num_pub_wire_bits": 8382,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         25387,
+         "area":              176559.334400,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 306,
+            "$_MUX_": 16384,
+            "$_NAND_": 7,
+            "$_NOR_": 1,
+            "$_NOT_": 25,
+            "$_ORNOT_": 13,
+            "$_OR_": 303,
+            "$_XNOR_": 8,
+            "$_XOR_": 60,
+            "sky130_fd_sc_hd__dfrtp_2": 87,
+            "sky130_fd_sc_hd__dfstp_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 8192
+         }
+      }
+}
+
+127. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:              17353
+   Number of wire bits:          25453
+   Number of public wires:         282
+   Number of public wire bits:    8382
+   Number of ports:                 11
+   Number of port bits:             73
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              25387
+     $_ANDNOT_                     306
+     $_MUX_                      16384
+     $_NAND_                         7
+     $_NOR_                          1
+     $_NOT_                         25
+     $_ORNOT_                       13
+     $_OR_                         303
+     $_XNOR_                         8
+     $_XOR_                         60
+     sky130_fd_sc_hd__dfrtp_2       87
+     sky130_fd_sc_hd__dfstp_2        1
+     sky130_fd_sc_hd__dfxtp_2     8192
+
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+
+   Chip area for module '\async_fifo': 176559.334400
+     of which used for sequential elements: 176559.334400 (100.00%)
+
+[INFO] Using generated ABC script '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/AREA_0.abc'…
+
+128. Executing ABC pass (technology mapping using ABC).
+
+128.1. Extracting gate netlist of module `\async_fifo' to `/tmp/yosys-abc-ru432i/input.blif'..
+Extracted 17107 gates and 25404 wires to a netlist network with 8297 inputs and 8260 outputs.
+
+128.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-ru432i/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-ru432i/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-ru432i/input.blif 
+ABC: + read_lib -w /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/tmp/c52d9f0e2da44e5e99dd5d720d8c26d8.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.02 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/tmp/c52d9f0e2da44e5e99dd5d720d8c26d8.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.04 sec
+ABC: Memory =    9.54 MB. Time =     0.04 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/06-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =  14183 (  0.1 %)   Cap = 17.4 ff ( 22.3 %)   Area =   170103.14 ( 22.0 %)   Delay =  8859.67 ps  (  1.3 %)               
+ABC: Path  0 --      14 : 0  996 pi                       A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =2695.3 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --   16559 : 1  719 sky130_fd_sc_hd__inv_2   A =   3.75  Df =5960.8-3021.3 ps  S =8708.4 ps  Cin =  4.5 ff  Cout =1949.4 ff  Cmax = 331.4 ff  G =42100  
+ABC: Path  2 --   21687 : 3    1 sky130_fd_sc_hd__mux2_1  A =  11.26  Df =8026.5-3659.5 ps  S = 186.5 ps  Cin =  2.3 ff  Cout =   2.4 ff  Cmax = 173.0 ff  G =  102  
+ABC: Path  3 --   21688 : 5    1 sky130_fd_sc_hd__o221a_2 A =  11.26  Df =8231.8-3613.9 ps  S =  86.3 ps  Cin =  2.3 ff  Cout =   1.5 ff  Cmax = 281.1 ff  G =   58  
+ABC: Path  4 --   21689 : 3    1 sky130_fd_sc_hd__or3_2   A =   7.51  Df =8342.2-3325.6 ps  S =  73.6 ps  Cin =  1.5 ff  Cout =   2.5 ff  Cmax = 310.4 ff  G =  155  
+ABC: Path  5 --   21690 : 5    1 sky130_fd_sc_hd__o311a_2 A =  11.26  Df =8502.0-3348.7 ps  S =  53.0 ps  Cin =  2.4 ff  Cout =   2.5 ff  Cmax = 293.9 ff  G =  100  
+ABC: Path  6 --   21694 : 4    1 sky130_fd_sc_hd__o31a_2  A =  10.01  Df =8624.3-3158.4 ps  S =  48.6 ps  Cin =  2.3 ff  Cout =   2.5 ff  Cmax = 285.7 ff  G =   98  
+ABC: Path  7 --   21695 : 4    1 sky130_fd_sc_hd__a22o_2  A =  10.01  Df =8859.7-3086.4 ps  S = 180.5 ps  Cin =  2.3 ff  Cout =  33.4 ff  Cmax = 301.2 ff  G = 1424  
+ABC: Start-point = pi13 (\r_addr [2]).  End-point = po4683 ($auto$rtlil.cc:2739:MuxGate$38932).
+ABC: netlist                       : i/o = 8297/ 8260  lat =    0  nd = 14183  edge =  47963  area =170098.20  delay =10.00  lev = 10
+ABC: + write_blif /tmp/yosys-abc-ru432i/output.blif 
+
+128.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:       29
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:       30
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       43
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       96
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:      124
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:       33
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:      282
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:      191
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:      280
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:      522
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:     1606
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:      321
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:      115
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:       82
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       45
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:      477
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:      270
+ABC RESULTS:   sky130_fd_sc_hd__mux2_1 cells:     9433
+ABC RESULTS:        internal signals:     8847
+ABC RESULTS:           input signals:     8297
+ABC RESULTS:          output signals:     8260
+Removing temp directory.
+
+129. Executing SETUNDEF pass (replace undef values with defined constants).
+
+130. Executing HILOMAP pass (mapping to constant drivers).
+
+131. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 25431 unused wires.
+<suppressed ~28 debug messages>
+
+133. Executing INSBUF pass (insert buffer cells for connected wires).
+
+134. Executing CHECK pass (checking for obvious problems).
+Checking module async_fifo...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/tmp/c52d9f0e2da44e5e99dd5d720d8c26d8.lib ",
+   "modules": {
+      "\\async_fifo": {
+         "num_wires":         22440,
+         "num_wire_bits":     22502,
+         "num_pub_wires":     8293,
+         "num_pub_wire_bits": 8355,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         22463,
+         "area":              346662.476800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a211o_2": 33,
+            "sky130_fd_sc_hd__a211oi_2": 30,
+            "sky130_fd_sc_hd__a21o_2": 522,
+            "sky130_fd_sc_hd__a21oi_2": 35,
+            "sky130_fd_sc_hd__a221o_2": 191,
+            "sky130_fd_sc_hd__a22o_2": 2,
+            "sky130_fd_sc_hd__a2bb2o_2": 2,
+            "sky130_fd_sc_hd__a311o_2": 115,
+            "sky130_fd_sc_hd__a31o_2": 1,
+            "sky130_fd_sc_hd__a32o_2": 31,
+            "sky130_fd_sc_hd__and2_2": 280,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and3_2": 3,
+            "sky130_fd_sc_hd__and3b_2": 16,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 87,
+            "sky130_fd_sc_hd__dfstp_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 8192,
+            "sky130_fd_sc_hd__inv_2": 15,
+            "sky130_fd_sc_hd__mux2_1": 9433,
+            "sky130_fd_sc_hd__mux4_2": 1606,
+            "sky130_fd_sc_hd__nand2_2": 43,
+            "sky130_fd_sc_hd__nand2b_2": 6,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 270,
+            "sky130_fd_sc_hd__o211a_2": 124,
+            "sky130_fd_sc_hd__o21a_2": 282,
+            "sky130_fd_sc_hd__o21ai_2": 96,
+            "sky130_fd_sc_hd__o21ba_2": 3,
+            "sky130_fd_sc_hd__o221a_2": 321,
+            "sky130_fd_sc_hd__o221ai_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 31,
+            "sky130_fd_sc_hd__o2bb2ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 82,
+            "sky130_fd_sc_hd__o311ai_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 29,
+            "sky130_fd_sc_hd__or2_2": 477,
+            "sky130_fd_sc_hd__or3_2": 45,
+            "sky130_fd_sc_hd__or4_2": 5,
+            "sky130_fd_sc_hd__or4b_2": 2,
+            "sky130_fd_sc_hd__xnor2_2": 31,
+            "sky130_fd_sc_hd__xor2_2": 14
+         }
+      }
+   },
+      "design": {
+         "num_wires":         22440,
+         "num_wire_bits":     22502,
+         "num_pub_wires":     8293,
+         "num_pub_wire_bits": 8355,
+         "num_ports":         11,
+         "num_port_bits":     73,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         22463,
+         "area":              346662.476800,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a2111o_2": 1,
+            "sky130_fd_sc_hd__a211o_2": 33,
+            "sky130_fd_sc_hd__a211oi_2": 30,
+            "sky130_fd_sc_hd__a21o_2": 522,
+            "sky130_fd_sc_hd__a21oi_2": 35,
+            "sky130_fd_sc_hd__a221o_2": 191,
+            "sky130_fd_sc_hd__a22o_2": 2,
+            "sky130_fd_sc_hd__a2bb2o_2": 2,
+            "sky130_fd_sc_hd__a311o_2": 115,
+            "sky130_fd_sc_hd__a31o_2": 1,
+            "sky130_fd_sc_hd__a32o_2": 31,
+            "sky130_fd_sc_hd__and2_2": 280,
+            "sky130_fd_sc_hd__and2b_2": 1,
+            "sky130_fd_sc_hd__and3_2": 3,
+            "sky130_fd_sc_hd__and3b_2": 16,
+            "sky130_fd_sc_hd__and4_2": 1,
+            "sky130_fd_sc_hd__dfrtp_2": 87,
+            "sky130_fd_sc_hd__dfstp_2": 1,
+            "sky130_fd_sc_hd__dfxtp_2": 8192,
+            "sky130_fd_sc_hd__inv_2": 15,
+            "sky130_fd_sc_hd__mux2_1": 9433,
+            "sky130_fd_sc_hd__mux4_2": 1606,
+            "sky130_fd_sc_hd__nand2_2": 43,
+            "sky130_fd_sc_hd__nand2b_2": 6,
+            "sky130_fd_sc_hd__nand4_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 270,
+            "sky130_fd_sc_hd__o211a_2": 124,
+            "sky130_fd_sc_hd__o21a_2": 282,
+            "sky130_fd_sc_hd__o21ai_2": 96,
+            "sky130_fd_sc_hd__o21ba_2": 3,
+            "sky130_fd_sc_hd__o221a_2": 321,
+            "sky130_fd_sc_hd__o221ai_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 31,
+            "sky130_fd_sc_hd__o2bb2ai_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 82,
+            "sky130_fd_sc_hd__o311ai_2": 1,
+            "sky130_fd_sc_hd__o31a_2": 29,
+            "sky130_fd_sc_hd__or2_2": 477,
+            "sky130_fd_sc_hd__or3_2": 45,
+            "sky130_fd_sc_hd__or4_2": 5,
+            "sky130_fd_sc_hd__or4b_2": 2,
+            "sky130_fd_sc_hd__xnor2_2": 31,
+            "sky130_fd_sc_hd__xor2_2": 14
+         }
+      }
+}
+
+135. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:              22440
+   Number of wire bits:          22502
+   Number of public wires:        8293
+   Number of public wire bits:    8355
+   Number of ports:                 11
+   Number of port bits:             73
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              22463
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       33
+     sky130_fd_sc_hd__a211oi_2      30
+     sky130_fd_sc_hd__a21o_2       522
+     sky130_fd_sc_hd__a21oi_2       35
+     sky130_fd_sc_hd__a221o_2      191
+     sky130_fd_sc_hd__a22o_2         2
+     sky130_fd_sc_hd__a2bb2o_2       2
+     sky130_fd_sc_hd__a311o_2      115
+     sky130_fd_sc_hd__a31o_2         1
+     sky130_fd_sc_hd__a32o_2        31
+     sky130_fd_sc_hd__and2_2       280
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__and3_2         3
+     sky130_fd_sc_hd__and3b_2       16
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__dfrtp_2       87
+     sky130_fd_sc_hd__dfstp_2        1
+     sky130_fd_sc_hd__dfxtp_2     8192
+     sky130_fd_sc_hd__inv_2         15
+     sky130_fd_sc_hd__mux2_1      9433
+     sky130_fd_sc_hd__mux4_2      1606
+     sky130_fd_sc_hd__nand2_2       43
+     sky130_fd_sc_hd__nand2b_2       6
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2       270
+     sky130_fd_sc_hd__o211a_2      124
+     sky130_fd_sc_hd__o21a_2       282
+     sky130_fd_sc_hd__o21ai_2       96
+     sky130_fd_sc_hd__o21ba_2        3
+     sky130_fd_sc_hd__o221a_2      321
+     sky130_fd_sc_hd__o221ai_2       1
+     sky130_fd_sc_hd__o22a_2        31
+     sky130_fd_sc_hd__o2bb2ai_2      1
+     sky130_fd_sc_hd__o311a_2       82
+     sky130_fd_sc_hd__o311ai_2       1
+     sky130_fd_sc_hd__o31a_2        29
+     sky130_fd_sc_hd__or2_2        477
+     sky130_fd_sc_hd__or3_2         45
+     sky130_fd_sc_hd__or4_2          5
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2       31
+     sky130_fd_sc_hd__xor2_2        14
+
+   Chip area for module '\async_fifo': 346662.476800
+     of which used for sequential elements: 176559.334400 (50.93%)
+
+136. Executing Verilog backend.
+Dumping module `\async_fifo'.
+
+137. Executing JSON backend.

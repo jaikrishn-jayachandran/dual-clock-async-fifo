@@ -1,0 +1,99 @@
+Reading OpenROAD database at '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/20-openroad-generatepdn/async_fifo.odb'…
+Reading library file at '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading design constraints file at '/home/jaikrishn/Documents/hardware/true_port_BRAM/constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
++ global_placement -density 0.55 -skip_io -pad_right 0 -pad_left 0 -init_wirelength_coef 0.25
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: (  0.460  2.720 ) um
+[INFO GPL-0004] CoreBBox: (  5.520 10.880 ) ( 1394.260 1387.200 ) um
+[INFO GPL-0006] NumInstances:             50653
+[INFO GPL-0007] NumPlaceInstances:        22463
+[INFO GPL-0008] NumFixedInstances:        28190
+[INFO GPL-0009] NumDummyInstances:            0
+[INFO GPL-0010] NumNets:                  22502
+[INFO GPL-0011] NumPins:                  87074
+[INFO GPL-0012] DieBBox:  (  0.000  0.000 ) ( 1400.000 1400.000 ) um
+[INFO GPL-0013] CoreBBox: (  5.520 10.880 ) ( 1394.260 1387.200 ) um
+[INFO GPL-0016] CoreArea:            1911350.637 um^2
+[INFO GPL-0017] NonPlaceInstsArea:    37803.757 um^2
+[INFO GPL-0018] PlaceInstsArea:      346662.477 um^2
+[INFO GPL-0019] Util:                    18.503 %
+[INFO GPL-0020] StdInstsArea:        346662.477 um^2
+[INFO GPL-0021] MacroInstsArea:           0.000 um^2
+[INFO GPL-0031] FillerInit:NumGCells:     66543
+[INFO GPL-0032] FillerInit:NumGNets:      22502
+[INFO GPL-0033] FillerInit:NumGPins:      87074
+[INFO GPL-0023] TargetDensity:            0.550
+[INFO GPL-0024] AvrgPlaceInstArea:       15.433 um^2
+[INFO GPL-0025] IdealBinArea:            28.059 um^2
+[INFO GPL-0026] IdealBinCnt:              68118
+[INFO GPL-0027] TotalBinArea:        1911350.637 um^2
+[INFO GPL-0028] BinCnt:       256    256
+[INFO GPL-0029] BinSize: (  5.425  5.377 )
+[INFO GPL-0030] NumBins: 65536
+[NesterovSolve] Iter:    1 overflow: 1.000 HPWL: 60763830
+[NesterovSolve] Iter:   10 overflow: 1.000 HPWL: 40438629
+[NesterovSolve] Iter:   20 overflow: 1.000 HPWL: 39386545
+[NesterovSolve] Iter:   30 overflow: 1.000 HPWL: 39007495
+[NesterovSolve] Iter:   40 overflow: 1.000 HPWL: 38851128
+[NesterovSolve] Iter:   50 overflow: 1.000 HPWL: 38796305
+[NesterovSolve] Iter:   60 overflow: 1.000 HPWL: 38738044
+[NesterovSolve] Iter:   70 overflow: 1.000 HPWL: 38678071
+[NesterovSolve] Iter:   80 overflow: 1.000 HPWL: 38635446
+[NesterovSolve] Iter:   90 overflow: 0.999 HPWL: 38673361
+[NesterovSolve] Iter:  100 overflow: 0.999 HPWL: 39076923
+[NesterovSolve] Iter:  110 overflow: 0.999 HPWL: 40266013
+[NesterovSolve] Iter:  120 overflow: 0.999 HPWL: 43047262
+[NesterovSolve] Iter:  130 overflow: 0.998 HPWL: 48699139
+[NesterovSolve] Iter:  140 overflow: 0.997 HPWL: 56808076
+[NesterovSolve] Iter:  150 overflow: 0.996 HPWL: 65449115
+[NesterovSolve] Iter:  160 overflow: 0.993 HPWL: 74329040
+[NesterovSolve] Iter:  170 overflow: 0.991 HPWL: 84282795
+[NesterovSolve] Iter:  180 overflow: 0.988 HPWL: 96934328
+[NesterovSolve] Iter:  190 overflow: 0.982 HPWL: 114205938
+[NesterovSolve] Iter:  200 overflow: 0.974 HPWL: 137840190
+[NesterovSolve] Iter:  210 overflow: 0.962 HPWL: 168133867
+[NesterovSolve] Iter:  220 overflow: 0.948 HPWL: 197549712
+[NesterovSolve] Iter:  230 overflow: 0.930 HPWL: 226712128
+[NesterovSolve] Iter:  240 overflow: 0.906 HPWL: 256444547
+[NesterovSolve] Iter:  250 overflow: 0.880 HPWL: 294628167
+[NesterovSolve] Iter:  260 overflow: 0.852 HPWL: 334997791
+[NesterovSolve] Iter:  270 overflow: 0.813 HPWL: 361163478
+[NesterovSolve] Iter:  280 overflow: 0.761 HPWL: 383927425
+[NesterovSolve] Iter:  290 overflow: 0.712 HPWL: 380651536
+[NesterovSolve] Iter:  300 overflow: 0.658 HPWL: 391599545
+[NesterovSolve] Iter:  310 overflow: 0.617 HPWL: 398325356
+[NesterovSolve] Iter:  320 overflow: 0.578 HPWL: 401849931
+[NesterovSolve] Iter:  330 overflow: 0.535 HPWL: 402379578
+[NesterovSolve] Iter:  340 overflow: 0.497 HPWL: 402493768
+[NesterovSolve] Iter:  350 overflow: 0.466 HPWL: 403545143
+[NesterovSolve] Iter:  360 overflow: 0.431 HPWL: 402594448
+[NesterovSolve] Iter:  370 overflow: 0.397 HPWL: 401260264
+[NesterovSolve] Iter:  380 overflow: 0.367 HPWL: 399870710
+[NesterovSolve] Iter:  390 overflow: 0.337 HPWL: 399435600
+[NesterovSolve] Iter:  400 overflow: 0.310 HPWL: 399343533
+[NesterovSolve] Iter:  410 overflow: 0.285 HPWL: 400442485
+[NesterovSolve] Iter:  420 overflow: 0.256 HPWL: 397571724
+[NesterovSolve] Iter:  430 overflow: 0.228 HPWL: 399453875
+[NesterovSolve] Iter:  440 overflow: 0.199 HPWL: 401891461
+[NesterovSolve] Iter:  450 overflow: 0.170 HPWL: 403950197
+[NesterovSolve] Iter:  460 overflow: 0.142 HPWL: 405541124
+[NesterovSolve] Iter:  470 overflow: 0.117 HPWL: 407493090
+[NesterovSolve] Iter:  480 overflow: 0.099 HPWL: 409533286
+[NesterovSolve] Finished with Overflow: 0.098757
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                              1012    3798.64
+  Tap cell                              27178   34005.11
+  Inverter                                 15      56.30
+  Sequential cell                        8280  176559.33
+  Multi-Input combinational cell        14168  170046.84
+  Total                                 50653  384466.23
+Writing OpenROAD database to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/23-openroad-globalplacementskipio/async_fifo.odb'…
+Writing netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/23-openroad-globalplacementskipio/async_fifo.nl.v'…
+Writing powered netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/23-openroad-globalplacementskipio/async_fifo.pnl.v'…
+Writing layout to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/23-openroad-globalplacementskipio/async_fifo.def'…
+Writing timing constraints to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/23-openroad-globalplacementskipio/async_fifo.sdc'…

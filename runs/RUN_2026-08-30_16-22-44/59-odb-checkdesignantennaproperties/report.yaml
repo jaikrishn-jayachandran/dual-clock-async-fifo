@@ -1,0 +1,4 @@
+- cell: async_fifo
+  inout: []
+  input: []
+  output: []

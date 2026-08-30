@@ -1,0 +1,45 @@
+# =====================================================================
+# Unified Power Format (UPF) for Async FIFO
+# =====================================================================
+upf_version 2.1
+
+create_power_domain TOP
+
+# Define switchable power domain for the FIFO core / RAM macros
+create_power_domain PD_FIFO \
+    -elements {u_bram u_fifo_ctrl}
+
+# Define primary supplies
+create_supply_port vccd1
+create_supply_port vssd1
+
+create_supply_net VCCD1 -domain TOP
+create_supply_net VSSD1 -domain TOP
+
+connect_supply_net VCCD1 -ports vccd1
+connect_supply_net VSSD1 -ports vssd1
+
+set_domain_supply_net TOP \
+    -primary_power_net VCCD1 \
+    -primary_ground_net VSSD1
+
+# Switchable domain supplies (can be tied to a power switch controller)
+create_supply_net VCC_FIFO -domain PD_FIFO
+connect_supply_net VCC_FIFO -ports {PD_FIFO/vccd1}
+set_domain_supply_net PD_FIFO \
+    -primary_power_net VCC_FIFO \
+    -primary_ground_net VSSD1
+
+# Define Isolation Strategy using your iso_en signal
+set_isolation iso_rule \
+    -domain PD_FIFO \
+    -isolation_power_net VCCD1 \
+    -isolation_ground_net VSSD1 \
+    -clamp_value 0 \
+    -signal iso_en \
+    -active_high
+
+set_isolation_control iso_rule \
+    -domain PD_FIFO \
+    -isolation_signal iso_en \
+    -location parent

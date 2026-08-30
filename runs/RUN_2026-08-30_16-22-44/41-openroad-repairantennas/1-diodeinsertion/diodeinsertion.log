@@ -1,0 +1,443 @@
+Reading OpenROAD database at '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/38-openroad-globalrouting/async_fifo.odb'…
+Reading library file at '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading design constraints file at '/home/jaikrishn/Documents/hardware/true_port_BRAM/constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Setting signal min routing layer to: met1 and clock min routing layer to met1. 
+[INFO] Setting signal max routing layer to: met5 and clock max routing layer to met5. 
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 648 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 257
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 151193
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     819716        395807          51.71%
+met2       Vertical       614686        407101          33.77%
+met3       Horizontal     409858        284358          30.62%
+met4       Vertical       246440        156981          36.30%
+met5       Horizontal      81810         38793          52.58%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 153635
+[INFO GRT-0198] Via related Steiner nodes: 4687
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 196212
+[INFO GRT-0112] Final usage 3D: 726697
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1            395807         63625           16.07%             0 /  0 /  0
+met2            407101         65861           16.18%             0 /  0 /  0
+met3            284358          5671            1.99%             0 /  0 /  0
+met4            156981          2904            1.85%             0 /  0 /  0
+met5             38793             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total          1283040        138061           10.76%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 1433902 um
+[INFO GRT-0014] Routed nets: 23426
+[INFO GRT-0006] Repairing antennas, iteration 1.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 67 antenna violations.
+[INFO GRT-0015] Inserted 185 diodes.
+[INFO GRT-0009] rerouting 7110 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 258
+[INFO GRT-0006] Repairing antennas, iteration 2.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 17 antenna violations.
+[INFO GRT-0015] Inserted 28 diodes.
+[INFO GRT-0009] rerouting 56 nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 167
+[INFO GRT-0006] Repairing antennas, iteration 3.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0012] Found 1 antenna violations.
+[INFO GRT-0015] Inserted 2 diodes.
+[INFO GRT-0009] rerouting 1 nets.
+[INFO GRT-0001] Minimum degree: 119
+[INFO GRT-0002] Maximum degree: 119
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL          644384.2 u
+legalized HPWL         644384.2 u
+delta HPWL                    0 %
+
+[INFO DPL-0020] Mirrored 5797 instances
+[INFO DPL-0021] HPWL before          644384.2 u
+[INFO DPL-0022] HPWL after           625011.1 u
+[INFO DPL-0023] HPWL delta               -3.0 %
+-congestion_iterations 50 -verbose
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 30%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 648 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 258
+[INFO GRT-0003] Macros: 0
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vccd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[WARNING GRT-0041] Net vssd1 has wires/vias outside die area.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0004] Blockages: 151193
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal     819716        395806          51.71%
+met2       Vertical       614686        407101          33.77%
+met3       Horizontal     409858        284358          30.62%
+met4       Vertical       246440        156981          36.30%
+met5       Horizontal      81810         38793          52.58%
+---------------------------------------------------------------
+
+[INFO GRT-0101] Running extra iterations to remove overflow.
+[INFO GRT-0197] Via related to pin nodes: 153909
+[INFO GRT-0198] Via related Steiner nodes: 4676
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 196504
+[INFO GRT-0112] Final usage 3D: 727636
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1            395806         63764           16.11%             0 /  0 /  0
+met2            407101         65758           16.15%             0 /  0 /  0
+met3            284358          5617            1.98%             0 /  0 /  0
+met4            156981          2985            1.90%             0 /  0 /  0
+met5             38793             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total          1283039        138124           10.77%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 1434930 um
+[INFO GRT-0014] Routed nets: 23426
+[INFO] Setting RC values…
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                              1012    3798.64
+  Tap cell                              27178   34005.11
+  Antenna cell                            215     538.02
+  Clock buffer                            723   10546.36
+  Timing Repair Buffer                    278    5923.18
+  Inverter                                 15     186.43
+  Clock inverter                          447    5654.17
+  Sequential cell                        8280  166365.81
+  Multi-Input combinational cell        14168  175887.44
+  Total                                 52316  402905.17
+Writing OpenROAD database to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/41-openroad-repairantennas/1-diodeinsertion/async_fifo.odb'…
+Writing layout to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/41-openroad-repairantennas/1-diodeinsertion/async_fifo.def'…

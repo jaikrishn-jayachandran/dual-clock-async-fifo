@@ -1,0 +1,182 @@
+Reading timing models for corner nom_tt_025C_1v80…
+Reading timing library for the 'nom_tt_025C_1v80' corner at '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib'…
+Reading timing models for corner nom_ff_n40C_1v95…
+Reading timing library for the 'nom_ff_n40C_1v95' corner at '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib'…
+Reading timing models for corner nom_ss_100C_1v60…
+Reading timing library for the 'nom_ss_100C_1v60' corner at '/home/jaikrishn/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib'…
+Reading OpenROAD database at '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/33-openroad-detailedplacement/async_fifo.odb'…
+Reading design constraints file at '/home/jaikrishn/Documents/hardware/true_port_BRAM/constraints.sdc'…
+[INFO] No information on clock propagation in input SDC file-- propagating all clocks.
+[INFO] Setting RC values…
+[INFO] Configuring cts characterization…
+[INFO] Performing clock tree synthesis…
+[INFO] Looking for the following net(s): wclk rclk
+[INFO] Running Clock Tree Synthesis…
+[INFO CTS-0050] Root buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0051] Sink buffer is sky130_fd_sc_hd__clkbuf_8.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sky130_fd_sc_hd__clkbuf_2
+                    sky130_fd_sc_hd__clkbuf_4
+                    sky130_fd_sc_hd__clkbuf_8
+[INFO CTS-0049] Characterization buffer is sky130_fd_sc_hd__clkbuf_8.
+[INFO CTS-0007] Net "wclk" found for clock "wclk".
+[INFO CTS-0010]  Clock net "wclk" has 8220 sinks.
+[INFO CTS-0007] Net "rclk" found for clock "rclk".
+[INFO CTS-0010]  Clock net "rclk" has 60 sinks.
+[INFO CTS-0008] TritonCTS found 2 clock nets.
+[INFO CTS-0097] Characterization used 3 buffer(s) types.
+[INFO CTS-0200] 0 placement blockages have been identified.
+[INFO CTS-0201] 0 placed hard macros will be treated like blockages.
+[INFO CTS-0027] Generating H-Tree topology for net wclk.
+[INFO CTS-0028]  Total number of sinks: 8220.
+[INFO CTS-0029]  Sinks will be clustered in groups of up to 25 and with maximum cluster diameter of 50.0 um.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0204] A clustering solution was found from clustering size of 25 and clustering diameter of 50.
+[INFO CTS-0205] Better solution may be possible if either -sink_clustering_size, -sink_clustering_max_diameter, or both options are omitted to enable automatic clustering.
+[INFO CTS-0019]  Total number of sinks after clustering: 553.
+[INFO CTS-0024]  Normalized sink region: [(2.02115, 8.88142), (56.5112, 83.1292)].
+[INFO CTS-0025]     Width:  54.4900.
+[INFO CTS-0026]     Height: 74.2478.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 277
+    Sub-region size: 54.4900 X 37.1239
+[INFO CTS-0034]     Segment length (rounded): 18.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 139
+    Sub-region size: 27.2450 X 37.1239
+[INFO CTS-0034]     Segment length (rounded): 14.
+ Level 3
+    Direction: Vertical
+    Sinks per sub-region: 70
+    Sub-region size: 27.2450 X 18.5619
+[INFO CTS-0034]     Segment length (rounded): 10.
+ Level 4
+    Direction: Horizontal
+    Sinks per sub-region: 35
+    Sub-region size: 13.6225 X 18.5619
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 5
+    Direction: Vertical
+    Sinks per sub-region: 18
+    Sub-region size: 13.6225 X 9.2810
+[INFO CTS-0034]     Segment length (rounded): 4.
+ Level 6
+    Direction: Horizontal
+    Sinks per sub-region: 9
+    Sub-region size: 6.8113 X 9.2810
+[INFO CTS-0034]     Segment length (rounded): 4.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 553.
+[INFO CTS-0200] 0 placement blockages have been identified.
+[INFO CTS-0201] 0 placed hard macros will be treated like blockages.
+[INFO CTS-0027] Generating H-Tree topology for net rclk.
+[INFO CTS-0028]  Total number of sinks: 60.
+[INFO CTS-0029]  Sinks will be clustered in groups of up to 25 and with maximum cluster diameter of 50.0 um.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0023]  Original sink region: [(98705, 423020), (439955, 640620)].
+[INFO CTS-0024]  Normalized sink region: [(7.25772, 31.1044), (32.3496, 47.1044)].
+[INFO CTS-0025]     Width:  25.0919.
+[INFO CTS-0026]     Height: 16.0000.
+ Level 1
+    Direction: Horizontal
+    Sinks per sub-region: 30
+    Sub-region size: 12.5460 X 16.0000
+[INFO CTS-0034]     Segment length (rounded): 6.
+ Level 2
+    Direction: Vertical
+    Sinks per sub-region: 15
+    Sub-region size: 12.5460 X 8.0000
+[INFO CTS-0034]     Segment length (rounded): 4.
+ Level 3
+    Direction: Horizontal
+    Sinks per sub-region: 8
+    Sub-region size: 6.2730 X 8.0000
+[INFO CTS-0034]     Segment length (rounded): 4.
+[INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 60.
+[INFO CTS-0018]     Created 637 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 4.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 5.
+[INFO CTS-0015]     Created 637 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 2:3, 3:1, 4:2, 5:4, 6:8, 7:15, 8:30, 9:38, 10:36, 11:44, 12:45, 13:52, 14:54, 15:51, 16:44, 17:32, 18:29, 19:34, 20:32, 21:26, 22:21, 23:9, 24:2, 25:4..
+[INFO CTS-0017]     Max level of the clock tree: 6.
+[INFO CTS-0018]     Created 9 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 9 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 4:1, 6:1, 7:3, 8:1, 9:1, 12:1..
+[INFO CTS-0017]     Max level of the clock tree: 3.
+[INFO CTS-0098] Clock net "wclk"
+[INFO CTS-0099]  Sinks 8737
+[INFO CTS-0100]  Leaf buffers 552
+[INFO CTS-0101]  Average sink wire length 1575.92 um
+[INFO CTS-0102]  Path depth 4 - 5
+[INFO CTS-0207]  Leaf load cells 524
+[INFO CTS-0098] Clock net "rclk"
+[INFO CTS-0099]  Sinks 67
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 629.00 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Leaf load cells 524
+[INFO] Repairing long wires on clock nets…
+[INFO RSZ-0058] Using max wire length 6335um.
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                              1012    3798.64
+  Tap cell                              27178   34005.11
+  Clock buffer                            723   10546.36
+  Timing Repair Buffer                    277    5913.17
+  Inverter                                 15     186.43
+  Clock inverter                          447    5654.17
+  Sequential cell                        8280  166365.81
+  Multi-Input combinational cell        14168  175887.44
+  Total                                 52100  402357.14
+Writing OpenROAD database to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.odb'…
+Writing netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.nl.v'…
+Writing powered netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.pnl.v'…
+Writing layout to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.def'…
+Writing timing constraints to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.sdc'…
+[INFO] Legalizing…
+Placement Analysis
+---------------------------------
+total displacement       6602.9 u
+average displacement        0.1 u
+max displacement           12.9 u
+original HPWL          622658.6 u
+legalized HPWL         643994.8 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 5709 instances
+[INFO DPL-0021] HPWL before          643994.8 u
+[INFO DPL-0022] HPWL after           624651.2 u
+[INFO DPL-0023] HPWL delta               -3.0 %
+Setting global connections for newly added cells…
+[INFO] Setting global connections...
+Updating metrics…
+Cell type report:                       Count       Area
+  Fill cell                              1012    3798.64
+  Tap cell                              27178   34005.11
+  Clock buffer                            723   10546.36
+  Timing Repair Buffer                    277    5913.17
+  Inverter                                 15     186.43
+  Clock inverter                          447    5654.17
+  Sequential cell                        8280  166365.81
+  Multi-Input combinational cell        14168  175887.44
+  Total                                 52100  402357.14
+Writing OpenROAD database to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.odb'…
+Writing netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.nl.v'…
+Writing powered netlist to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.pnl.v'…
+Writing layout to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.def'…
+Writing timing constraints to '/home/jaikrishn/Documents/hardware/true_port_BRAM/runs/RUN_2026-08-30_16-22-44/34-openroad-cts/async_fifo.sdc'…
+%OL_CREATE_REPORT cts.rpt
+[INFO CTS-0003] Total number of Clock Roots: 2.
+[INFO CTS-0004] Total number of Buffers Inserted: 646.
+[INFO CTS-0005] Total number of Clock Subnets: 646.
+[INFO CTS-0006] Total number of Sinks: 8280.
+%OL_END_REPORT

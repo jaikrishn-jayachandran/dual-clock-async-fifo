@@ -1,0 +1,32 @@
+{
+  "DESIGN_NAME": "async_fifo",
+  "VERILOG_FILES": [
+    "dir::rtl/async_fifo.sv",
+    "dir::rtl/fifo_controller.sv",
+    "dir::rtl/dual_port_bram.sv",
+    "dir::rtl/binary_to_gray.sv",
+    "dir::rtl/gray_to_binary.sv"
+  ],
+  "CLOCK_PERIODS": {
+    "wclk": 10.0,
+    "rclk": 25.0
+  },
+  "CLOCK_PORTS": [
+    "wclk",
+    "rclk"
+  ],
+  "CLOCK_NET": [
+    "wclk",
+    "rclk"
+  ],
+  "RUN_UPF_FLOW": true,
+  "UPF_FILE": "dir::async_fifo.upf",
+  "SDC_FILE": "dir::constraints.sdc",
+  "FP_PDN_CORE_RING": true,
+  "FP_SIZING": "absolute",
+  "DIE_AREA": [0, 0, 1400, 1400],
+  "PL_TARGET_DENSITY": 0.55,
+  "FP_ASPECT_RATIO": 1.0,
+  "VDD_NETS": ["vccd1"],
+  "GND_NETS": ["vssd1"]
+}
